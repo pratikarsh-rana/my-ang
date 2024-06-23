@@ -1,0 +1,39 @@
+npm uninstall -g @angular/cli
+npm cache verify
+npm install -g @angular/cli@14
+ng version
+
+
+ng new course-portal-ng
+ng new --no-standalone
+
+ng g m [module-name] --routing  ng g module admin --routing  
+
+
+//login module
+ ng g module login --routing
+ cd .\login\
+ ng g c login
+ 
+ add route path {path: '', component:LoginComponent}
+ 
+ 
+ //add form group
+ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+ add below in import of module
+  FormsModule,
+    ReactiveFormsModule,
+	
+	
+	
+//add this in app routing 
+  { path: 'user',  loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule), canActivate:[appGuardGuard] },
+  
+
+//interceptor
+ng g interceptor <interceptorName>
+
+//json server
+npm i json-server -g
+npm install -g json-server
+json-server --watch db.json
